@@ -20,7 +20,7 @@ jobs:
         working-directory: work/agri-mobile
         run: |
           npm install
-          npm install -D typescript
+          npm install -D typescript@5
           npm run build
           npx cap add android
           npx cap sync android
