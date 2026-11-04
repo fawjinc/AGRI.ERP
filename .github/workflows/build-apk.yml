@@ -13,13 +13,14 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
       - name: Unzip project
         run: unzip -q agri-mobile.zip -d work
       - name: Build APK
         working-directory: work/agri-mobile
         run: |
           npm install
+          npm install -D typescript
           npm run build
           npx cap add android
           npx cap sync android
